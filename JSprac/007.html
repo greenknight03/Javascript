@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장함수</title>
+    <style></style>
+</head>
+<body>
+    <script>
+      var txt = 'paullab CEO leehojun';
+      var num = 10;
+
+      // 문자형
+      document.write(txt.length); // .을 찍어 사용할수 있는 함수 = 내장함수
+      document.write('<br>');
+      document.write(txt.indexOf('CEO')); 
+      document.write('<br>');
+      document.write(txt.slice(0, 7)); // 공백전까지 자름
+      document.write('<br>');
+      document.write(txt.replace('CEO', 'CTO')); // 어떤 문자열을 다른 문자열로 고칠떄 사용!
+      document.write('<br>');
+      document.write(txt.toUpperCase()); // 대문자로 변환  
+      document.write('<br>');
+      document.write(txt.toLowerCase()); // 소문자로 변환  
+      document.write('<br>');
+
+      // 숫자형
+      document.write(num.toFixed(6));  // 6자리 맞춰서 출력
+      document.write('<br>');
+      document.write(num.toString() + num.toString());  // 문자열 10 
+      document.write('<br>');
+      document.write(Math.PI); 
+      document.write('<br>');
+      document.write(Math.max(10, 20, 30)); 
+      document.write('<br>');
+      document.write(Math.random()*10);  // 기본값 : 0부터 1까지 랜덤한 숫자 / random()*10에서 10까지 랜덤한 숫자
+      document.write('<br>');
+    </script>
+</body>
+</html>
