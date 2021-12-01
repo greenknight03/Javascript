@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-      // 
+      
     </script>
 </body>
 </html>
@@ -101,5 +101,56 @@ for (let i = 0; i < reverse.length; ++i) {
   }
 }
 console.log(sample);
+
+
+let 행렬 = [[1,2,3],[4,5,6],[7,8,9]];
+undefined
+행렬[0]
+(3) [1, 2, 3]
+행렬[0][0]
+1
+행렬[0] + 행렬[0]
+'1,2,31,2,3'
+행렬[0] * 2
+NaN
+행렬[0] - 행렬[0]
+NaN
+행렬[0] / 행렬[0]
+NaN
+행렬[0].toString()
+'1,2,3'
+행렬[0] + ''
+'1,2,3'
+
+// 1,2,3에다가 곱하기 2를 하고싶다
+let sample = [1, 2, 3]
+undefined
+for (let i in sample) {
+    sample[i] *= 2 // sample[i] = sample[i] * 2
+}
+sample
+(3) [2, 4, 6]
+for (let i in sample) {
+    console.log(i)
+}
+sample
+VM4849:2 0
+VM4849:2 1
+VM4849:2 2
+(3) [2, 4, 6]
+for (let i of sample) {
+    console.log(i)
+}
+sample
+VM4863:2 2
+VM4863:2 4
+VM4863:2 6
+(3) [2, 4, 6]
+
+in : sample 안의 요소 인덱스
+i 라는 손가락을 준비해서 sample이라는 배열을 센다 느낌입니다
+in 이니까 'in'dex ..
+of : sample 안의 요소
+
 
   -->
