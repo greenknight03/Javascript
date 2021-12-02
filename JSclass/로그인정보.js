@@ -73,3 +73,14 @@ section : '개발'
 
 let s = '개발';
 let data = s? blogs.filter(b => b.section === s) : blogs;
+
+
+
+
+
+
+
+
+
+// filter : 다 돈다. 찾아도 돈다.
+// find : 찾으면 멈춘다. --> 고유한 값을 찾을 땐 효율을 위해 find 사용이 좋다!
