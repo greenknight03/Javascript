@@ -8,9 +8,43 @@
 </head>
 <body>
     <script>
-      var l = [10, 20, 30, 40];
-      document.write([2]);
+      var l = [10, 20, 30, 40, 50];
+      document.write(l[0]);
       document.write('<br>');
+      document.write(l[1]);
+      document.write('<br>');
+      document.write(l.slice(1, 4)); 
+      document.write('<br>');
+      document.write(l.pop());
+      document.write('<br>');
+      document.write(l);
+      document.write('<br>');
+      l.push(1000);
+      document.write(l);
+      document.write('<br>');
+      document.write(l.join('!!'));
+      document.write('<br>');
+      // l.sort();
+      l.reverse();
+      document.write(l);
+      document.write('<br>');
+
     </script>
 </body>
 </html>
+
+<!-- 
+
+  slice - 특정위치까지 잘라주는 메서드 
+  // slice(0, 3) 배열 0번부터 3번째 전까지 = 10, 20, 30
+  // slice(1, 4) 배열 1번부터 4번째 전까지 = 20, 30, 40
+  
+  pop - 특정값을 꺼내고 싶을때 
+
+  push - 특정값을 넣어주고 싶을뗴 
+
+  sort - 문자열 사전식 정렬 맨 앞자리수 먼저봄 ex.) 10, 1000, 20, 30, 40
+  reverse - 사전식 역순 정렬 ex.) 1000,40,30,20,10
+
+
+-->
