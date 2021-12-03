@@ -507,3 +507,117 @@ function 기름통(치킨) {
 
 // 치킨박스에 튀겨진 치킨 할당
 치킨박스 = 치킨튀기는함수(치킨);
+
+
+12/3
+
+객체는 클래스의 인스턴스
+
+인스턴스는 타입을 통해서 만들어진 값.
+
+자바스크립트 프로토타압기반 객체지향 
+
+
+this 
+
+function aboutThis(){
+    console.log(this);
+}
+aboutThis();
+VM231:2 Window 
+undefined
+
+// this: 함수를 호출한 객체 (윈도우객체안에선언되어있다)
+// window: 전역객체(최상위객체)
+undefined
+
+window.aboutThis();
+VM231:2 Window
+
+function aboutThis() {
+    console.log(this);
+}
+
+
+aboutThis를 호출한 객체가 전역개체라 window가 나온거군요
+ 
+aboutThis();
+
+let myObj = {
+    val1: 100,
+    func1: function () {
+        console.log(this);
+    }
+}
+
+myObj.func1();
+
+그럼 왜 console.log(this) 했을때 myObj가 아닌지 의문이 생길수 있는데요.
+콘솔에 출력된 {val1: 100, func1: f} 자체가 myObj 자체입니다 
+
+
+closer
+scope - 변수의 유효범위 
+같은 스코프 안에 있으면 값의 접근이 가능하다!!
+전역스코프 - 어디서든 접근할 수 있는 공간 Global
+함수스코프 - 함수안에 변수 지역변수 바깥에서 접근할 수 없다
+블록스코프 - 최신문법 let const
+
+클로저 closer : 폐쇄 
+함수안에 있는 공간 
+스코프와 비슷 
+함수에서 객체도 return이 된다
+
+
+key: value에서 value가 함수면 key는 함수명이 되나요
+
+클로저는 내부함수가 외부함수의 맥락에 접근할 수 있는 것을 가르킨다
+클로져 : 테크닉. 폐쇄된 공간의 데이터에 접근하기 위한 테크닉
+memoery efficient , encapsulation 의 이득
+
+
+function myFunction(){
+
+    var val1 = "hello";
+    
+    return {getVal1 : function(){return val1}}
+}
+
+var val1 = 'gg';
+undefined
+let result = myFunction();
+
+원래대로라면 저 val1은 외부에서 접근하지 못하는건데, 클로저를 통해서  getVal1을 통해서만 val1에 접근
+클로저의 존재이유 - 변수를 보호하기 위해서 함수로 감싸줬다. 
+
+
+
+
+Math.random();
+0이상 1미만 1은 절대 나오지 않는다!
+
+Math.floor(Math.random()*10);
+10미만으로 나옴 
+정수로 해주고
+
+function randomNum(min, max){
+    return Math.floor(Math.random()*(max-min)+min);
+}
+
+
+
+
+
+|| : 마지막 폴시(falsy) 값 혹은 처음 만난 투루시(truthy) 값을 반환합니다.
+1 || 2 || 3 || 4 || 5
+= 1
+0 || 0 || 0 || 0 || 5
+= 5
+&& : 마지막 투루시(truthy) 값 혹은 처음 만난 마지막 폴시(falsy) 값을 반환합니다.
+0 && 1 && 2
+= 0 
+
+
+- false : 0, '', null, undefined, NaN
+- true : 37, 'Mark', {}, [] .....
+논리연산자 순서 NOT > AND > OR
