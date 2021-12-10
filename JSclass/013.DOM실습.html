@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* 직접 셀렉트 박스 만들기 */
+        h2 {
+            margin: 30px;
+        }
+
+        .cont-select {
+            position: relative;
+            width: 200px;
+        }
+
+        .btn-select {
+            width: 100%;
+            padding: 13px 14px;
+            color: #000;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: left;
+            border: 1px solid #C4C4C4;
+            box-sizing: border-box;
+            border-radius: 10px;
+            cursor: pointer;
+            background: url("images/icon-Triangle-down.png") right 13px center no-repeat;
+
+            /* 말줄임 추가 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .btn-select:focus {
+            outline: 3px solid #F8E4FF;
+        }
+
+        .list-member {
+            display: none;
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 51px;
+            background: #FFF;
+            border: 1px solid #C4C4C4;
+            box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+        }
+
+        .btn-select.on {
+            background: url("images/icon-Triangle-up.png") right 13px center no-repeat;
+
+        }
+
+        .btn-select.on+.list-member {
+            display: block;
+        }
+
+        .list-member li {
+            height: 40px;
+            padding: 5px 18px;
+        }
+
+        .list-member li button {
+            display: block;
+            height: 30px;
+            width: 100%;
+            border: none;
+            background-color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+
+            /* 말줄임 추가 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .list-member li button:focus,
+        .list-member li button:hover {
+            background-color: #F8E4FF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>셀렉트 박스 만들기</h2>
+    <article class="cont-select">
+        <button class="btn-select">나의 최애 프로그래밍 언어</button>
+        <ul class="list-member"></ul>
+    </article>
+
+    <script>
+        const btn = document.querySelector('.btn-select');
+        const list = document.querySelector('.list-member');
+        const arrLang = ["Python", "Java", "JavaScript", "C#", "C/C++"];
+
+        arrLang.forEach((item) => {
+            const li = document.createElement('li');
+            const btn = document.createElement('button');
+            btn.setAttribute('type', 'button');
+            btn.textContent = item;
+            list.appendChild(li).appendChild(btn);
+        });
+
+        btn.addEventListener('click', () => {
+            btn.classList.toggle('on');
+        });
+
+        list.addEventListener('click', (event) => {
+            if (event.target.nodeName === "BUTTON") {
+                btn.textContent = event.target.textContent;
+                btn.classList.remove('on');
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+    
+    <!-- 커스텀 셀렉트 박스에 기능을 붙여봅시다!
+
+    1.  list-member 요소에 자식 요소들을 생성하여 넣어줍니다. 교재의 예시를 참고해주세요 🙂
+
+    2.  btn-select 를 누르면 list-member 가 화면에 노출됩니다. (처음에는 숨겨저 있습니다.)
+
+    3. list-member 의 자식요소를 누르면 눌린 요소의 텍스트 컨텐츠가 btn-select 요소의 텍스트 컨텐츠가 되도록 합니다.
+
+    4. list-member가 숨겨집니다.
+
+
+
+    이벤트 위임을 이용할 때는 if 문을 활용해 
+e.target.tagName이 ‘A’ 일 경우 / e.target.tagName이 ‘LI’ 일 경우 / e.target.tagName이 ‘UL’ 일 경우 
+각각 엄격히 처리해 두는 것이 훗날 정신 건강에 좋다 라네유
+
+flag === false ? flag = true : flag = false; 는 flag = !flag가 더 좋을것 같다 (feat.  킹민주)
+
+if (e.target.tagName === 'BUTTON') 이걸넣어야하는건가요??
+
+아니면 태그네임 말고 그 친구애들에게 클래스도 만들어 주는게 더 정신건강에 좋을거 같아요 
+
+    -->
