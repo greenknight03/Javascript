@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수의 scope</title>
+    <style></style>
+</head>
+<body>
+    <script>
+      var i = 10 
+      const k = 10000;
+      if (i > 5){
+        let j = 100;
+      }
+      else {
+        let j = 1000;
+      }
+      function f() {
+        i += 100000;
+      }
+      f()
+      document.write(i);
+    </script>
+</body>
+</html>
+
+
+<!-- var은 기본적으로 functionscope 속성 함수를 벗어나는 순간 실행 안됨 / 밖에서 생성된 함수는 가지고 나올 수 있지만 안에서 생성된함수는 밖으로 빠져나오지 못한다.
+      let ,const는 blockscope 속성
+
+-->

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style></style>
+</head>
+<body>
+  <div class="one">hello world</div>
+  <div class="one two" id="three">hello world two</div>
+  <div class="one two four">hello world three</div>
+    <script>
+      // 1. 단일 element를 반환하는 함수 
+      // document.getElementById('id')
+      // document.querySelector('query')
+      // // 2. 복수의 element를 반환하는 함수 
+      // document.getElementsByName('name')
+      k = document.getElementsByClassName('one')
+      console.log(k);
+      document.write(k['0']['innerHTML'])
+      document.write('<br>')
+      document.write(k['2']['className'])
+      // document.querySelectorAll('query')
+    </script>
+</body>
+</html>
+
+<!-- 여러개의 클래스를 가지고 변경하고 싶을때 혹은 텍스트를 수정하고 싶을때 복수 element
+반환하는 함수 씀 -->
