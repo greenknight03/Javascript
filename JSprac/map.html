@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+    <style></style>
+</head>
+<body>
+    <script>
+      // Map, set
+
+      let m = new Map(); //맵이 생성됨 
+
+      m.set('하나', '1');
+      m.set( 1, '하나');  // 숫자 1을 넣으면 문자열 하나가 출력됨 
+      m.set( true, 1 );
+      m.set( false , 0 );
+
+      // get을 사용하면 key값을 이용해서 value호출 가능 
+      console.log(m.get('하나'));   
+      console.log(m.get(true)) ;  // 기존 object에서는 이게 안됨~
+      console.log(m.has('하나'));  //has ~를 가지고 있을때 
+      console.log(m.delete('하나')); // 요소 지울 수 있다  
+      console.log(m.has('하나'))
+      console.log(m);
+      console.log(m.size);  
+
+      for (var variable of m) {
+        console.log(`m을 순회하고 있습니다. ${variable[0]}`)
+        console.log(`m을 순회하고 있습니다. ${variable[1]}`)
+      }
+
+      console.log(m.keys());
+      console.log(m.values());
+      console.log(m.entries());
+
+      // 0과 1의 값을 index로 가지고있는 자료형들도 mapping이 된다.
+      let temp = new Map([[1, 10],
+      [2, 20],
+      [3, 30],
+      [4, 40]]);
+
+      console.log(temp)
+
+    </script>
+</body>
+</html>
+
+<!-- 
+  Map - object와 유사하지만 여기서 key값은 문자열뿐만아니라 다른 자료형도 받을 수 있다.
+
+  Set - 집합의 속성 , 중복을 허락하지 않음  
+
+ -->
