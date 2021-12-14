@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <style></style>
+</head>
+<body>
+    <button type="button" onclick="test();" name="button">클릭!</button>
+
+    <script>
+      // 함수 - 어떤 기능단위의 묶음 
+      // 원의 반지름을 입력받으면 원의 너비를 반환해주는 함수  
+      // 함수 이용 - 구조적 이해 , 재사용성 
+      function circleWidth(r){
+        let width = r*r*3.14;
+        return undefined;   // return을 안쓰면 undefined 뜸 
+      }
+      document.write(circleWidth(10));
+
+      function test(){
+        document.write('hello world');
+      }
+
+
+      // 변수 사용 - 재사용하기 어려움 
+      // let r = 10;
+      // document.write(r*r*3.14);
+    </script>
+</body>
+</html>
+
+<!-- 
+  function circle-함수이름 (r-input){
+  let width = r*r*3.14; - 기능
+  return width; - output // return을 안쓰면 undefined 뜸 
+  return - 함수에 있는 자리에 반환 
+} -->
