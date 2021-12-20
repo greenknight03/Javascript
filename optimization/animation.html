@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 100px;
+        }
+
+        .target {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            transition: 0.1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="target"></div>
+    <script>
+        const target = document.querySelector(".target");
+        // 이동할 거리
+        let pos = 0;
+        // 키의 상태
+        let keys = {};
+
+        document.addEventListener('keydown', move);
+        document.addEventListener('keyup', stop);
+
+        function move(event) {
+            keys[event.key] = true;
+        }
+        function stop(event) {
+            keys[event.key] = false;
+        } // 눌렀을때만 에니메이션 실행하기 휘해 함수 활용
+
+        function play() {
+            if (keys.ArrowRight) {
+                pos += 5;
+                target.style.transform = `translateX(${pos}px)`; // 오른쪽키를 누르면 x축으로 5만큼 이동
+            }
+            if (keys.ArrowLeft) {
+                pos -= 5;
+                target.style.transform = `translateX(${pos}px)`;
+            }
+            window.requestAnimationFrame(play); // 계속실행되게해줌 재귀적으로 실행하도록 도와줌 게임개발때 자주 쓰임 브라우저에게 미리 에니메이션을 알림
+        }
+
+        window.requestAnimationFrame(play);
+
+
+        // function move(event) {
+        //     const keyName = event.key;
+        //     if (keyName === 'ArrowRight') {
+        //         pos += 5;
+        //         target.style.transform = `translateX(${pos}px)`;
+        //     }
+        //     if (keyName === 'ArrowLeft') {
+        //         pos -= 5;
+        //         target.style.transform = `translateX(${pos}px)`;
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
